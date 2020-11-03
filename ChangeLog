@@ -1,0 +1,11 @@
+0.2.0 (2 November 2020)
+-----
+
+* Fixed a small typo in the 3rd constraint equation in the pressure function
+* Added the sprinkler computer model, i.e., sprinkler() function
+* Added two vignettes
+
+0.1.0 (13 October 2020)
+-----
+
+* Package is published

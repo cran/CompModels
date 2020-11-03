@@ -15,7 +15,7 @@
 #' @note A solution is feasible only if of all of the constraint functions values are less than or equal to 0.
 #' @examples
 #' ### Running the function at x1 = 10, x2 = 4, x3 = 21, x4 = 24.
-#' ### obj = 55536.1 and con = (-10.4053, -20.77104, 12223956.99727, -216)
+#' ### obj = 55536.1 and con = (-10.4053, -20.77104, 1219107.94901, -216)
 #' ### (x1,x2,x3,x4) = (10,4,21,24) is not a feasible solution
 #'
 #' pressure(10,4,21,24)

@@ -1,0 +1,143 @@
+%\VignetteEngine{R.rsp::tex}
+%\VignetteIndexEntry{CompModels: Diagrams of physics based computer models}
+%\VignetteKeyword{CompModels}
+
+\documentclass[nojss]{jss}
+
+%% -- LaTeX packages and custom commands ---------------------------------------
+
+%% recommended packages
+\usepackage{thumbpdf,lmodern}
+
+%% My packages
+\usepackage{amssymb, amsfonts, amsmath}
+
+%% new custom commands
+\newcommand{\class}[1]{`\code{#1}'}
+\newcommand{\fct}[1]{\code{#1()}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+
+%% -- Article metainformation (author, title, ...) -----------------------------
+
+%% - \author{} with primary affiliation
+%% - \Plainauthor{} without affiliations
+%% - Separate authors by \And or \AND (in \author) or by comma (in \Plainauthor).
+%% - \AND starts a new line, \And does not.
+\author{Tony Pourmohamad\\Genentech, Inc.}
+\Plainauthor{}
+
+%% - \title{} in title case
+%% - \Plaintitle{} without LaTeX markup (if any)
+%% - \Shorttitle{} with LaTeX markup (if any), used as running title
+\title{Physical representations of the physics based computer models in the CompModels package}
+\Plaintitle{}
+\Shorttitle{}
+
+%% - \Abstract{} almost as usual
+\Abstract{
+  The \pkg{CompModels} package for \proglang{R} provides a suite of computer model test functions that can be used for computer model prediction/emulation, uncertainty quantification, and calibration, but in particular, the sequential optimization of computer models. The package is a mix of real-world physics problems, known mathematical functions, and black-box functions that have been converted into computer models with the goal of Bayesian (i.e., sequential) optimization in mind. Likewise, the package contains computer models that represent either the constrained or unconstrained optimization case, each with varying levels of difficulty. The following document serves to provide a schematic overview of the physical representations of the physics based computer models.}
+
+%% - \Keywords{} with LaTeX markup, at least one required
+%% - \Plainkeywords{} without LaTeX markup (if necessary)
+%% - Should be comma-separated and in sentence case.
+\Keywords{Simulators, computer models, black-box}
+
+\Address{
+  Tony Pourmohamad\\
+  Genentech, Inc.\\
+  1 DNA Way\\
+  South San Francisco, CA 94080\\
+  E-mail: \email{tpourmohamad@gmail.com}\\
+}
+
+\begin{document}
+
+\newpage
+\section{Pressure Vessel Computer Model}
+The pressure vessel computer model is designed to minimize the total cost of constructing a pressure vessel considering the cost of material, forming, and welding. The four inputs to the computer model are the thickness of the shell ($x_1$), the thickness of the head ($x_2$), the inner radius ($x_3$), and the length of the cylindrical section of the vessel ($x_4$) not including the head. Note, the thicknesses of the variables are integer multiples of 0.0625 inches. The cost of the pressure vessel is subject to four constraints. For implementation details in \proglang{R}, please use \code{?pressure}.
+
+\begin{figure}[!http]
+\centering
+\includegraphics{PressureVessel.pdf}
+\caption{\label{fig:pressure} The physical representation of the pressure vessel computer model.}
+\end{figure}
+
+\begin{table}[!http]
+\footnotesize
+\centering
+\begin{tabular}{lcc}
+\hline
+Attribute  & Parameter & Domain \\
+\hline
+Shell thickness& $x_1$ & $[0,99]$ \\
+Head thickness& $x_2$  & $[0,99]$ \\
+Inner Radius&  $x_3$  & $[0,200]$\\
+Length of cylinder& $x_4$  & $[0,200]$  \\
+\hline
+\end{tabular}
+\caption{\label{tab:pressure} Computer model inputs.}
+\end{table}
+
+
+\newpage
+\section{Sprinkler Computer Model}
+The sprinkler computer model is a multiobjective optimization problem adapted from \cite{bebber:2010}. The objectives are to minimize the water consumption associated with using a garden sprinkler, while also maximizing the speed and range of the garden sprinkler. The eight inputs to the computer model are the vertical ($x_1$) and tangential ($x_2$) nozzle angle, the nozzle profile ($x_3$), the diameter of the sprinkler head ($x_4$), the dynamic ($x_5$) and static ($x_6$) friction moment, the entrance pressure ($x_7$), and the diameter flow line ($x_8$). For implementation details in \proglang{R}, please use \code{?sprinkler}.
+
+
+\begin{figure}[!http]
+\centering
+\includegraphics{sprinkler.pdf}
+\caption{\label{fig:sprinkler} The physical representation of the sprinkler computer model.}
+\end{figure}
+
+\begin{table}[!http]
+\footnotesize
+\centering
+\begin{tabular}{lccc}
+\hline
+Attribute  & Parameter & Domain  & Units\\
+\hline
+Vertical nozzle angle & $x_1$ & $[0,90]$ & $^{\circ} $\\
+Tangential nozzle angle & $x_2$  & $[0,90]$ & $^{\circ} $\\
+Nozzle profile&  $x_3$  & $[2\text{e-}6,4\text{e-}6]$ & $\text{m}^2$\\
+Diameter of the sprinkler head& $x_4$ & $[0.1,0.2]$ & $\text{mm}$\\
+Dynamic friction moment& $x_5$  & $[0.01,0.02]$ & Nm\\
+Static friction moment&  $x_6$  & $[0.01,0.02]$ & Nm/s\\
+Entrance pressure& $x_7$ & $[1,2]$ & bar\\
+Diameter flow line & $x_8$  & $[5,10]$ & mm\\
+\hline
+\end{tabular}
+\caption{\label{tab:sprinkler} Computer model inputs.}
+\end{table}
+
+
+\newpage
+\section{Tension Spring Computer Model}
+The tension spring computer model is designed to minimize the weight of a tension spring. The three inputs to the computer model are the wire diameter ($x_1$), mean coil diameter ($x_2$), and the number of active coils ($x_3$). The tension spring weight is subject to four constraints on the shear stress, surge frequency, and deflection. For implementation details in \proglang{R}, please use \code{?tension}.
+
+\begin{figure}[!http]
+\centering
+\includegraphics{TensionSpring.pdf}
+\caption{\label{fig:tension} The physical representation of the tension spring computer model.}
+\end{figure}
+\begin{table}[!http]
+\footnotesize
+\centering
+\begin{tabular}{lcc}
+\hline
+Attribute  & Parameter & Domain \\
+\hline
+Wire diameter& $x_1$ & $[0.05,2]$ \\
+Mean coil diameter & $x_2$  & $[0.25,1.3]$ \\
+Number of active coils&  $x_3$  & $[2,15]$\\\hline
+\end{tabular}
+\caption{\label{tab:tension} Computer model inputs.}
+\end{table}
+
+
+\newpage
+
+\bibliography{refs}
+
+\end{document}

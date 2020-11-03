@@ -15,6 +15,7 @@ extern void bbox7c(void *, void *, void *, void *, void *, void *, void *, void 
 extern void gramc(void *, void *, void *, void *, void *);
 extern void mtpc(void *, void *, void *, void *);
 extern void pressurec(void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void sprinklerc(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void tensionc(void *, void *, void *, void *, void *, void *, void *, void *);
 
 static const R_CMethodDef CEntries[] = {
@@ -27,6 +28,7 @@ static const R_CMethodDef CEntries[] = {
   {"gramc",     (DL_FUNC) &gramc,      5},
   {"mtpc",      (DL_FUNC) &mtpc,       4},
   {"pressurec", (DL_FUNC) &pressurec,  9},
+  {"sprinklerc", (DL_FUNC) &sprinklerc, 11},
   {"tensionc",  (DL_FUNC) &tensionc,   8},
   {NULL, NULL, 0}
 };
