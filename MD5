@@ -1,5 +1,5 @@
-ff99097f9522ee68c2bb7afc96c9e4a8 *ChangeLog
-a7f3b366d4313b3b4616bc3d7b3dba1f *DESCRIPTION
+2e11f5ff7356e7e2b0e33457984b51e2 *ChangeLog
+6760f839b03376a0f8d8637459a46686 *DESCRIPTION
 9de2b1b0470b5e5add30ce596d681853 *NAMESPACE
 0cdc08499352c6a988f2aecdb07933e2 *R/bbox1.R
 8f9a328b1b557d13d112e75db66e09a0 *R/bbox2.R
@@ -13,11 +13,12 @@ d86cef9dcdf94175cf95da6c06850c2b *R/bbox7.R
 c2b547cd8cc7ed5ff0ead92333cf49b9 *R/pressure.R
 9fc0482eefc321359cb5db8165455c8e *R/sprinkler.R
 6a9f42a6c554c78796786ecaacdd81a3 *R/tension.R
-635008f7380f76ff95ad72dec0bb1348 *build/vignette.rds
-e8cb69c878adb6432164c3d57b5ca7a5 *inst/doc/CompModels.ltx
-9d8f524a7bc287f0fb410c2a6098307f *inst/doc/CompModels.pdf
+72703c3d6833f0ebc2c1f3c2da1f27c9 *build/vignette.rds
+3e1eacd64ae668ea9c3a2dc02407cfef *inst/CITATION
+0161f882727cc60c4d9e9dfc5dab6a9d *inst/doc/CompModels.ltx
+94bec241211d2840f0aabaf14b55bda3 *inst/doc/CompModels.pdf
 6fab2798983a1558a0fb616a0e81aa46 *inst/doc/PhysicsCompModels.ltx
-a8c5797b98233ab8fdaa91c0bfbb743c *inst/doc/PhysicsCompModels.pdf
+b4cd81f6bdc062b4f780819ecfaf1db2 *inst/doc/PhysicsCompModels.pdf
 c007a46e5b3503c04c0e5c41961a1dfd *man/bbox1.Rd
 818b6ee5c4501bfd1bfadbe9db78b850 *man/bbox2.Rd
 78b1fe93e1256a1582712671f032726f *man/bbox3.Rd
@@ -50,9 +51,9 @@ be7cee672c0f40ccd1a402be3b8b7d37 *src/bbox6.c
 4d04642a2e10a736f7f5e46505dfe1ca *src/myfuncs7.h
 fd33889cfd15b493690e96233ec64ae9 *src/myfuncs8.h
 31b2a0b758de6619ab37d5ec0c69fa15 *src/pressure.c
-cffd22a6913369894bb8132f3b95cc3e *src/sprinkler.c
+fbaa57c46a2edb0cf7ce07d5933e0a98 *src/sprinkler.c
 51f545ffe0c6bc490e27c1b44ac4e910 *src/tension.c
-e8cb69c878adb6432164c3d57b5ca7a5 *vignettes/CompModels.ltx
+0161f882727cc60c4d9e9dfc5dab6a9d *vignettes/CompModels.ltx
 6fab2798983a1558a0fb616a0e81aa46 *vignettes/PhysicsCompModels.ltx
 e823c6773665d1ce8a5567d384d11acf *vignettes/PressureVessel.pdf
 335e87388fd09ca5a34282ac5890e523 *vignettes/TensionSpring.pdf

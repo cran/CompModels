@@ -186,15 +186,15 @@ Fortunately, if we treat $Y(x)$ as coming from a GP then, conditional on a parti
 \end{align}
 where $\mu^n(x)$ and $\sigma^n(x)$ are the mean and standard deviation of the predictive distribution of $Y(x)$, and $\Phi(\cdot)$ and $\phi(\cdot)$ are the standard normal cdf and pdf respectively.
 
-Extending EI to the constrained optimization case, \cite{schonlau:1998} defined expected feasible improvement (EFI) as
+Extending EI to the constrained optimization case, \cite{schonlau:1998} defined expected feasible improvement (EFI) as 
 \begin{align}
-\text{EFI}(x) = \mathbb{E}[I(x)]\mathbb{I}(c(x)\leq0),
+\text{EFI}(x) = \mathbb{E}[I(x)]\times\text{Pr}(c(x)\leq0),
 \end{align}
-where $\mathbb{I}()$ is the usual indicator function and is equal to one when the constraint functions are satisfied, and zero otherwise. Here, $I(x)$ uses an $f^n_{\min}$ defined over the region where the constraint functions are satisfied.  Again, new candidate inputs, $x^*$, can now be selected by maximizing the expected feasible improvement, i.e.,
+where  $\text{Pr}(c(x)\leq 0)$ is the probability of satisfying the joint constraints. Here, $I(x)$ uses an $f^n_{\min}$ defined over the region where the constraint functions are satisfied.  Again, new candidate inputs, $x^*$, can now be selected by maximizing the expected feasible improvement, i.e.,
 \begin{align}\label{expected:feasible:improvement}
-x^*=\arg\max_{x\in\mathcal{X}}\mathbb{E}[I(x)]\mathbb{I}(c(x)\leq0).
+x^*=\arg\max_{x\in\mathcal{X}} \mathbb{E}[I(x)]\times\text{Pr}(c(x)\leq0). 
 \end{align}
-Here the formula in (\ref{EI}) still holds, however, we are now evaluating the EI only in areas where the constraints are satisfied.
+Here the formula in (\ref{EI}) still holds, however, we are now weighting EI by the probability that $x$ is feasible.
 
 %% -- Illustrations ------------------------------------------------------------
 

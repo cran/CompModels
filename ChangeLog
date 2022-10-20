@@ -1,3 +1,10 @@
+0.3.0 (18 October 2022)
+-----
+
+* Remond "LazyData" to fix the NOTE
+* Added new citation for package
+* Fixed issue with "use of bitwise '&' with boolean operands"
+
 0.2.0 (2 November 2020)
 -----
 

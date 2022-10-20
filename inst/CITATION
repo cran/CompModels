@@ -1,0 +1,18 @@
+citHeader("To cite CompModels in publications use:")
+
+citEntry(entry = "Article",
+         title        = "{CompModels: A Suite of Computer Model Test Functions for Bayesian Optimization}",
+         author       = personList(as.person("Tony Pourmohamad")),
+         journal      = "The R Journal",
+         year         = "2021",
+         volume       = "13",
+         number       = "2",
+         pages        = "441--449",
+         doi          = "10.32614/RJ-2021-076",
+
+         textVersion  = paste("Tony Pourmohamad (2021).",
+                              "CompModels: A Suite of Computer Model Test Functions for Bayesian Optimization.",
+                              "The R Journal, 13(2), 441-449, ",
+                              "<doi:10.32614/RJ-2021-076}>.")
+)
+
